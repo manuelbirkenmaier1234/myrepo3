@@ -69,3 +69,30 @@ data("ToothGrowth")
 
 boxplot(len ~ dose*factor(supp, levels = c("VC", "OJ")), data=ToothGrowth)
 hist(ToothGrowth$len, breaks = 10)
+
+#Practical 3 rehearsal
+films <- read.csv("films.csv")
+head(films)
+films <- films |> 
+  select(-X)
+which(colnames(films) == "originalTitle")
+colnames(films)[which(colnames(films) == "originalTitle")] <- "Title"
+colnames(films)
+dim(films)
+sbst.films <- films %>%
+  select("tconst", "averageRating", "numVotes", "titleType",
+         "primaryTitle", "startYear", "genres")
+head(sbst.films)
+dim(sbst.films) 
+unique(sbst.films$titleType)
+summary(sbst.films$averageRating[sbst.films$titleType == "tvMovie"])
+
+movies.only <- sbst.films[sbst.films$titleType == "movie",]
+head(movies.only)
+pop.movies.only <- movies.only %>%
+  subset(subset = averageRating > 7.5 & numVotes > 100)
+dim(pop.movies.only)
+dim(pop.movies.only)
+
+#practical 4 rehearsal
+#Question
