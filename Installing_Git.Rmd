@@ -37,7 +37,14 @@ With that help I manageg to install Git.
 
 
 
-## Creating the 
+## Creating the PAT (personal access token)
+
+following the instruction on the `HappyGitWithR` website, the set up was
+actually pretty straight forward.
+
+## Introducing yourself to Git
+
+## Making sure you can talk to Github and Github can talk to you
 
 
 
