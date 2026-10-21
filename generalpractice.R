@@ -95,4 +95,27 @@ dim(pop.movies.only)
 dim(pop.movies.only)
 
 #practical 4 rehearsal
-#Question
+#Question 1
+#in one histogram
+ggplot(data = films, aes(x = titleType,  fill = titleType)) + 
+  geom_bar()
+#split into different histograms
+ggplot(data = films, aes(x = averageRating, fill = titleType)) + 
+  facet_grid(cols=vars(titleType)) + 
+  labs(
+    title = "Number of movies by average Rating and movie type",
+    x = "average rating",
+    y = "Number of movies") + 
+  scale_fill_brewer(palette = "Set3") + 
+  geom_histogram()
+#boxplot average rating by titleType
+ggplot(data = films, aes(x = titleType, y = averageRating, 
+                         fill = titleType)) + 
+  geom_boxplot() + 
+  labs(title = "Average Rating by movie type", 
+       x = "movie type",
+       y = "average rating") + 
+  scale_fill_brewer(palette = "Set2") 
+  
+  
+  
